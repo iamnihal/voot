@@ -2,6 +2,11 @@
 
 clear
 
+echo -e "\nNote:- Use Network activity option in DevTools to grab Contestant Id and Name\n"
+
+read -p 'Enter the name of Contestant:- ' name
+read -p 'Enter Contestant Id:- ' conId
+
 for i in $(seq 1 20000)
 do
     if [ $i -eq 1 ]
@@ -72,7 +77,7 @@ do
 
     echo "*** Doing Voting, Please Wait ***"
 
-    curl -sL 'https://voting-api.voot.com/v1/addvote' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0' -H 'Accept: */*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Content-Type: application/json' -H 'Origin: https://voting.voot.com' -H 'Connection: keep-alive' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' --data-raw '{"showId":"ec324230-02f2-11eb-bf8c-d128fef771cc","showName":"Bigg Boss 14","categoryId":"","categoryName":"","contestantId":"d8d200a0-1abb-11eb-a795-5100ad300b39","contestantName":"Rahul Vaidya","cycleId":"e22aea10-1ded-11eb-a795-5100ad300b39","userId":"'"$UserId"'","userName":"","userEmail":"'"$mail"'","region":"in","ip":"202.142.67.82","loginProvider":"Traditional"}'
+    curl -sL 'https://voting-api.voot.com/v1/addvote' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0' -H 'Accept: */*' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Content-Type: application/json' -H 'Origin: https://voting.voot.com' -H 'Connection: keep-alive' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' --data-raw '{"showId":"ec324230-02f2-11eb-bf8c-d128fef771cc","showName":"Bigg Boss 14","categoryId":"","categoryName":"","contestantId":"'"$conId"'","contestantName":"'"$name"'","cycleId":"e22aea10-1ded-11eb-a795-5100ad300b39","userId":"'"$UserId"'","userName":"","userEmail":"'"$mail"'","region":"in","ip":"202.142.67.82","loginProvider":"Traditional"}'
 
     echo -e "\n-----------------------------------------------------X----------------------------------------------\n"
 
