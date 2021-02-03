@@ -22,6 +22,7 @@ Currently, I have redacted the password from the file for obvious reason. So it 
 
 ## 🚀 TODO:-
 * To add a feature that creates accounts in bulk.
+* ~~Corresponding Python Script.~~
 
 ## Caution:-
 I don't know if this thing is legal or not. I've read the Terms & Conditions of voot.com and I didn't find anything which could potentially indicate this script as illegal to use.
